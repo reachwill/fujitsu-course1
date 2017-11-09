@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    
+        .cost:before{
+            content: '£';
+        }
+        
+        figcaption{
+            font-family: arial;
+            color:white;
+            background: black;
+            padding: 7px;         
+        }
+        
+        body > header{
+            max-width:600px;
+            margin: auto;
+        }
+        
+        body > header figure img{
+            width: 100%;
+        }
+        
+        body > header figure p{
+            margin: 0;
+        }
+        
+       
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <figure>
+            <img id="bannerImg">
+            <figcaption id="bannerCaption"></figcaption>
+        </figure>
+    </header>
+
+    <script>
+        //create an array as a data model
+        var images = [{
+                fileName: 'image1.jpeg',
+                caption: 'A nice car',
+                cost: 95000
+            },
+            {
+                fileName: 'image2.jpeg',
+                caption: 'A very nice car',
+                cost: 115000
+            },
+            {
+                fileName: 'image3.jpeg',
+                caption: 'A really nice car',
+                cost: 135000
+            },
+            {
+                fileName: 'image4.jpeg',
+                caption: 'A exceptionally nice car',
+                cost: 155000
+            },
+            {
+                fileName: 'image5.jpeg',
+                caption: 'The nicest car',
+                cost: 555000
+            }
+        ];
+
+
+        function displayRandomImage() {
+            //generate a random number 
+            var randomNum = Math.floor(Math.random() * images.length);
+            //console.log(images[randomNum]);
+            //use the randomNum to reference a value from the array and use that value as the src of the img
+            document.getElementById('bannerImg').src = '../images2/' + images[randomNum].fileName;
+            //display the caption for the image
+    document.getElementById('bannerCaption').innerHTML = images[randomNum].caption + '<p>Cost: <span class="cost">' + images[randomNum].cost + '</span></p>';
+        };
+
+        displayRandomImage();
+
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    
+        .cost:before{
+            content: '£';
+        }
+        
+        figcaption{
+            font-family: arial;
+            color:white;
+            background: black;
+            padding: 7px;         
+        }
+        
+        body > header{
+            max-width:600px;
+            margin: auto;
+        }
+        
+        body > header figure img{
+            width: 100%;
+        }
+        
+        body > header figure p{
+            margin: 0;
+        }
+        
+       
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <figure>
+            <img id="bannerImg">
+            <figcaption id="bannerCaption"></figcaption>
+        </figure>
+    </header>
+
+    <script>
+        //create an array as a data model
+        var images = [{
+                fileName: 'image1.jpeg',
+                caption: 'A nice car',
+                cost: 95000
+            },
+            {
+                fileName: 'image2.jpeg',
+                caption: 'A very nice car',
+                cost: 115000
+            },
+            {
+                fileName: 'image3.jpeg',
+                caption: 'A really nice car',
+                cost: 135000
+            },
+            {
+                fileName: 'image4.jpeg',
+                caption: 'A exceptionally nice car',
+                cost: 155000
+            },
+            {
+                fileName: 'image5.jpeg',
+                caption: 'The nicest car',
+                cost: 555000
+            }
+        ];
+        
+        
+        //declare a variable to step thru the images array
+        var stepper = 0;
+
+
+        function displayNextImage(){
+            console.log('function called');
+            var currentImage = images[stepper];
+            document.getElementById('bannerImg').src = '../images2/' + currentImage.fileName;
+            document.getElementById('bannerCaption').innerHTML = currentImage.caption;
+            
+            if(stepper <= images.length - 2 ){
+                stepper++;
+            }else{
+                stepper = 0;
+            };
+            
+            setTimeout(displayNextImage,2000);
+        };
+        
+        displayNextImage();
+        
+
+    </script>
+
+
+
+
+</body>
+
+</html>

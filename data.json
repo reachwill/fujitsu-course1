@@ -1,0 +1,59 @@
+{
+    "cars":[
+        {
+            "id":"001",
+            "make":"Maserati",
+            "model":"Gran Turismo",
+            "imageFile":"image1.jpeg",
+            "desc":"A nice car",
+            "cost":"95000.3456",
+            "options":[
+                "Furry dice","Satnav"
+            ]
+        },
+        {
+            "id":"002",
+            "make":"Maserati",
+            "model":"Gran Turismo",
+            "imageFile":"image2.jpeg",
+            "desc":"A really nice car",
+            "cost":"115000.8765",
+            "options":[
+                "Sunroof","Satnav"
+            ]
+        },
+        {
+            "id":"003",
+            "make":"Maserati",
+            "model":"Micra",
+            "imageFile":"image3.jpeg",
+            "desc":"An economical car",
+            "cost":"5000.2345",
+            "options":[
+                "Furry dice","Small Wheels"
+            ]
+        },
+        {
+            "id":"004",
+            "make":"Fiat",
+            "model":"MPV",
+            "imageFile":"image4.jpeg",
+            "desc":"A fine family car",
+            "cost":"6000.3456",
+            "options":[
+                "Furry dice","Child Seats"
+            ]
+        },
+        {
+            "id":"005",
+            "make":"Dacia",
+            "model":"Sombrero",
+            "imageFile":"image5.jpeg",
+            "desc":"Extremely fast and cool",
+            "cost":"595000.3456",
+            "options":[
+                "Alloys","Slick Racing Tyres"
+            ]
+        }
+    ]
+}

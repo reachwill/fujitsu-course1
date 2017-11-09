@@ -1,0 +1,276 @@
+/*
+
+selector{
+    property:value;
+
+}
+
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Raleway|Titillium+Web:900');
+
+
+/*element selector - specificity = 1 */
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+
+/*class selector - specificity = 10 */
+.hilite{
+    color:green;
+}
+
+
+/*id selector - specificity = 100 */
+#yellow{
+    color:yellow;
+}
+
+
+/* > defines a direct descendent selector */
+body > header, body > aside, body > section{
+    border:1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    
+}
+
+body > header{
+    height:300px;
+    background:
+    url(../assets/logo.svg) no-repeat 98% 2%, 
+    url(../assets/surfing2.jpg) no-repeat ;
+    
+    background-size:5%, 100% 100%;
+    
+    position: relative;
+}
+
+body > header h1{
+    font-size: 4em;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+
+body > header  nav  ul, body > section > ul, form > ul{
+    list-style: none;
+    margin: 0;
+    padding:0; 
+}
+
+body > header nav li{
+    display: inline;
+}
+
+/*pseudo selector*/
+a:hover{
+    color: #f00;
+}
+
+body > header nav a{
+    
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#aebcbf+0,6e7774+50,0a0e0a+51,0a0809+100 */
+background: #aebcbf; /* Old browsers */
+background: -moz-linear-gradient(top, #aebcbf 0%, #6e7774 50%, #0a0e0a 51%, #0a0809 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #aebcbf 0%,#6e7774 50%,#0a0e0a 51%,#0a0809 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #aebcbf 0%,#6e7774 50%,#0a0e0a 51%,#0a0809 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aebcbf', endColorstr='#0a0809',GradientType=0 ); /* IE6-9 */
+    
+    
+    
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 7px;
+    width: 75px;
+    display: inline-block;
+    text-align: center;
+}
+
+
+body > header nav a:hover{
+    background: #a0b744;
+    color:white;
+    transition: background 0.5s;
+}
+
+
+a[href$=pdf]{
+    background: url(../assets/pdf.png) no-repeat right;
+    padding-right: 20px;
+}
+
+
+
+body > header nav{
+    padding:10px;
+    background: rgba(0,0,0,0.3);
+    position: absolute;
+    bottom:10px;
+    right:10px;
+}
+
+
+.float-right{
+    float: right;
+}
+
+.business-card{
+    border: 1px solid #000;
+    animation: fadeIn 2s, rotate 2s;
+    animation-delay: 0s, 2s;
+}
+
+.business-card figcaption{
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.content{
+    column-count: 3;
+}
+
+.content p{
+    margin-top: 0;
+}
+
+/*add media query to adjust number of columns depending on screen width*/
+@media only screen and (max-width:700px){
+    .content{
+        column-count: 2;
+    }
+}
+
+@media only screen and (max-width:600px){
+    .content{
+        column-count: 1;
+    }
+}
+
+
+/*css web animations*/
+@keyframes fadeIn {
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes rotate {
+    from{
+        transform:rotateY(0deg);
+    }
+    to{
+        transform:rotateY(360deg);
+    }
+}
+
+
+
+/*form styling*/
+
+label{
+    display: block;
+}
+
+form > ul > li{
+    margin: 15px 0;
+}
+
+input[type=text],input[type=email],textarea,select{
+    font-size: 1em;
+    width: 50%;
+    border:1px solid #ccc;
+}
+
+input[type=date]{
+    font-size: 1em;
+    border:1px solid #ccc;
+}
+
+button[type=submit]{
+    border:none;
+    background: #a0b744;
+    font-size: 1em;
+}
+
+input:focus,textarea:focus{
+    border:1px solid #f60;
+    padding-right: 70px;
+    transition: padding 0.5s;
+}
+
+*:focus{
+    outline:none;
+}
+
+input:required,textarea:required{
+    background: #fff  url(../form_demo/images/red_asterisk.png) no-repeat right top;
+}
+
+input:required:valid,textarea:required:valid{
+    background: #fff  url(../form_demo/images/valid.png) no-repeat right top;
+}
+
+input:focus:invalid,textarea:focus:invalid{
+    background: #fff  url(../form_demo/images/invalid.png) no-repeat right top;
+}
+
+textarea{
+    height:100px;
+}
+
+
+/*table styling*/
+table{
+    border-collapse: collapse;
+    width:100%;
+}
+
+th,td{
+    padding: 7px;
+}
+
+th{
+    background-color: #a0b744;
+}
+
+tbody tr:nth-child(even){
+    background-color: #ccc;
+}
+
+tbody td:nth-child(1){
+    white-space: nowrap;
+}
+
+td:nth-child(3):before{
+    content:'£';
+}
+
+
+.clickable{
+    color:blue;
+    cursor:pointer;
+}
+
+.clickable:hover{
+    color:red;
+}
+
+
+
+
+
+
+
+
+
